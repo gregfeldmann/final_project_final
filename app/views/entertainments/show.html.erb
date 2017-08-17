@@ -60,6 +60,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_rating" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for entertainment_id -->
+      <input type="hidden" name="entertainment_id" value="<%= @entertainment.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Rating
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -91,6 +114,47 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_recommend" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for entertainment_id -->
+      <input type="hidden" name="entertainment_id" value="<%= @entertainment.id %>">
+
+      <!-- Label and input for picture -->
+      <div class="form-group">
+        <label for="picture" class="control-label">
+          Picture
+        </label>
+
+        <input type="text" id="picture" name="picture" placeholder="Picture" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for sender_id -->
+      <div class="form-group">
+        <label for="sender_id" class="control-label">
+          Sender
+        </label>
+
+        <input type="text" id="sender_id" name="sender_id" placeholder="Sender" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for receiver_id -->
+      <div class="form-group">
+        <label for="receiver_id" class="control-label">
+          Receiver
+        </label>
+
+        <%= select_tag(:receiver_id, options_from_collection_for_select(User.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Recommend
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
