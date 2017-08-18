@@ -14,17 +14,11 @@
         <% end %>
       </dd>
 
-      <dt>Picture</dt>
-      <dd><%= @recommend.picture %></dd>
-
-      <dt>Sender</dt>
-      <dd><%= @recommend.sender_id %></dd>
-
-      <dt>Receiver</dt>
+      <dt>User</dt>
       <dd>
-        <% if @recommend.receiver.present? %>
-          <a href="/users/<%= @recommend.receiver_id %>">
-            <%= @recommend.receiver.name %>
+        <% if @recommend.user.present? %>
+          <a href="/users/<%= @recommend.user_id %>">
+            <%= @recommend.user.name %>
           </a>
         <% end %>
       </dd>
