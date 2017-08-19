@@ -2,9 +2,8 @@ class CreateRecommends < ActiveRecord::Migration
   def change
     create_table :recommends do |t|
       t.integer :entertainment_id
-      t.string :picture
-      t.integer :sender_id
-      t.integer :receiver_id
+      t.integer :user_id
+      t.string :username
 
       t.timestamps
 

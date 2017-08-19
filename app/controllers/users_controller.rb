@@ -24,6 +24,8 @@ class UsersController < ApplicationController
     @user = User.new
 
     @user.name = params[:name]
+    @user.username = params[:username]
+    @user.email = params[:email]
 
     save_status = @user.save
 
@@ -51,6 +53,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @user.name = params[:name]
+    @user.username = params[:username]
+    @user.email = params[:email]
 
     save_status = @user.save
 
