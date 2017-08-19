@@ -8,6 +8,12 @@
       <dt>Name</dt>
       <dd><%= @user.name %></dd>
 
+      <dt>Username</dt>
+      <dd><%= @user.username %></dd>
+
+      <dt>Email</dt>
+      <dd><%= @user.email %></dd>
+
     </dl>
 
     <div class="btn-group btn-group-justified">
@@ -69,6 +75,15 @@
         <%= select_tag(:entertainment_id, options_from_collection_for_select(Entertainment.all, :id, :picture), :class => "form-control") %>
       </div>
 
+      <!-- Label and input for rating -->
+      <div class="form-group">
+        <label for="rating" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="">
+      </div>
+
       <button class="btn btn-block btn-success">
         Create Rating
       </button>
@@ -120,31 +135,16 @@
         <%= select_tag(:entertainment_id, options_from_collection_for_select(Entertainment.all, :id, :picture), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for picture -->
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= @user.id %>">
+
+      <!-- Label and input for username -->
       <div class="form-group">
-        <label for="picture" class="control-label">
-          Picture
+        <label for="username" class="control-label">
+          Username
         </label>
 
-        <input type="text" id="picture" name="picture" placeholder="Picture" class="form-control" value="">
-      </div>
-
-      <!-- Label and input for sender_id -->
-      <div class="form-group">
-        <label for="sender_id" class="control-label">
-          Sender
-        </label>
-
-        <input type="text" id="sender_id" name="sender_id" placeholder="Sender" class="form-control" value="">
-      </div>
-
-      <!-- Label and input for receiver_id -->
-      <div class="form-group">
-        <label for="receiver_id" class="control-label">
-          Receiver
-        </label>
-
-        <%= select_tag(:receiver_id, options_from_collection_for_select(User.all, :id, :name), :class => "form-control") %>
+        <input type="text" id="username" name="username" placeholder="Username" class="form-control" value="">
       </div>
 
       <button class="btn btn-block btn-success">

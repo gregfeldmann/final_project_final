@@ -27,31 +27,22 @@
         <%= select_tag(:entertainment_id, options_from_collection_for_select(Entertainment.all, :id, :picture, @recommend.entertainment_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for picture -->
+      <!-- Label and input for user_id -->
       <div class="form-group">
-        <label for="picture" class="control-label">
-          Picture
+        <label for="user_id" class="control-label">
+          User
         </label>
 
-        <input type="text" id="picture" name="picture" placeholder="Picture" class="form-control" value="<%= @recommend.picture %>">
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :name, @recommend.user_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for sender_id -->
+      <!-- Label and input for username -->
       <div class="form-group">
-        <label for="sender_id" class="control-label">
-          Sender
+        <label for="username" class="control-label">
+          Username
         </label>
 
-        <input type="text" id="sender_id" name="sender_id" placeholder="Sender" class="form-control" value="<%= @recommend.sender_id %>">
-      </div>
-
-      <!-- Label and input for receiver_id -->
-      <div class="form-group">
-        <label for="receiver_id" class="control-label">
-          Receiver
-        </label>
-
-        <%= select_tag(:receiver_id, options_from_collection_for_select(User.all, :id, :name, @recommend.receiver_id), :class => "form-control") %>
+        <input type="text" id="username" name="username" placeholder="Username" class="form-control" value="<%= @recommend.username %>">
       </div>
 
       <button class="btn btn-warning">
