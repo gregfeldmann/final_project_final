@@ -23,6 +23,7 @@ class RatingsController < ApplicationController
 
     @rating.user_id = params[:user_id]
     @rating.entertainment_id = params[:entertainment_id]
+    @rating.rating = params[:rating]
 
     save_status = @rating.save
 
@@ -51,6 +52,7 @@ class RatingsController < ApplicationController
 
     @rating.user_id = params[:user_id]
     @rating.entertainment_id = params[:entertainment_id]
+    @rating.rating = params[:rating]
 
     save_status = @rating.save
 
