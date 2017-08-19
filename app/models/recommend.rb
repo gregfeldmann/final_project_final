@@ -3,8 +3,7 @@ class Recommend < ApplicationRecord
 
   belongs_to :entertainment
 
-  belongs_to :receiver,
-             :class_name => "User"
+  belongs_to :user
 
   # Indirect associations
 
